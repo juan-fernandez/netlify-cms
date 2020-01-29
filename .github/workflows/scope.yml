@@ -3,9 +3,10 @@ name: Scope tests
 on: [push]
 
 jobs:
-  build:
+  tests:
     env:
       SCOPE_DSN: ${{ secrets.SCOPE_DSN }}
+      CI: true
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +20,7 @@ jobs:
         run: yarn bootstrap
       - name: Run unit tests
         run: yarn test:unit
-      - name: Run app
-        run: yarn start &
+      - name: Build demo
+        run: yarn build:demo
       - name: Run e2e tests
-        run: yarn test:e2e:exec
+        run: yarn test:e2e:run-ci
