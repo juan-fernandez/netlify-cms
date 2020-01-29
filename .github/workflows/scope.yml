@@ -3,7 +3,7 @@ name: Scope tests
 on: [push]
 
 jobs:
-  tests:
+  build:
     env:
       SCOPE_DSN: ${{ secrets.SCOPE_DSN }}
       CI: true
@@ -18,9 +18,25 @@ jobs:
         run: yarn
       - name: Bootstrap
         run: yarn bootstrap
-      - name: Run unit tests
-        run: yarn test:unit
       - name: Build demo
         run: yarn build:demo
+      - uses: actions/upload-artifact@master
+        with:
+          name: dev-test-website-node-12
+          path: dev-test
+
+  tests:
+    needs: build
+    runs-on: ubuntu-latest
+    env:
+      SCOPE_DSN: ${{ secrets.SCOPE_DSN }}
+      CI: true
+    steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: dev-test-website-node-12
+          path: dev-test
+      - name: Run unit tests
+        run: yarn test:unit
       - name: Run e2e tests
-        run: yarn test:e2e:run-ci
+        run: yarn test:e2e:run
