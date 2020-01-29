@@ -1,5 +1,8 @@
 module.exports = {
-  setupFilesAfterEnv: ['<rootDir>/setupTestFramework.js'],
+  setupFilesAfterEnv: [
+    '<rootDir>/setupTestFramework.js',
+    '@undefinedlabs/scope-agent/jest/setupTests',
+  ],
   moduleNameMapper: {
     'netlify-cms-lib-auth': '<rootDir>/packages/netlify-cms-lib-auth/src/index.js',
     'netlify-cms-lib-util': '<rootDir>/packages/netlify-cms-lib-util/src/index.ts',
@@ -7,4 +10,6 @@ module.exports = {
     'netlify-cms-backend-github': '<rootDir>/packages/netlify-cms-backend-github/src/index.ts',
   },
   testURL: 'http://localhost:8080',
+  testRunner: '@undefinedlabs/scope-agent/jest/testRunner',
+  runner: '@undefinedlabs/scope-agent/jest/runner',
 };
