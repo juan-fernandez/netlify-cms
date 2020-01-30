@@ -3278,10 +3278,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@undefinedlabs/scope-agent@0.0.0-experimental-1":
-  version "0.0.0-experimental-1"
-  resolved "https://registry.yarnpkg.com/@undefinedlabs/scope-agent/-/scope-agent-0.0.0-experimental-1.tgz#faaabc9875d46ce3c5f94230a74c34a1a8c490d7"
-  integrity sha512-Ro3SVp2lo3zsb7M/aZrYddIluvrt7x2BiT+5N4mzGTQXfWAp32oP1efRw6VCR2hyyybuK5+/HQwbY+BMki7Pjw==
+"@undefinedlabs/scope-agent@0.0.0-experimental-2":
+  version "0.0.0-experimental-2"
+  resolved "https://registry.yarnpkg.com/@undefinedlabs/scope-agent/-/scope-agent-0.0.0-experimental-2.tgz#f9d0992fd58e071567adc80b4c8b20b90c15e0e3"
+  integrity sha512-4/gHMLSDmzYTgwz52yh/Hpvy1WzkMY0ALA82aMW/rjvXq7J/IawbJG1VGtj/cXiylVVvRbDUUIdvNp04TvxthQ==
   dependencies:
     "@hapi/sntp" "^3.1.2"
     axios "^0.19.0"
