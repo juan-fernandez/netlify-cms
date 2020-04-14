@@ -31,6 +31,8 @@ const { setupProxy, teardownProxy, setupProxyTest, teardownProxyTest } = require
 
 const { copyBackendFiles } = require('../utils/config');
 
+const { initCypressPlugin } = require('@undefinedlabs/scope-agent/cypress/plugin');
+
 module.exports = async (on, config) => {
   // `on` is used to hook into various events Cypress emits
   on('task', {
@@ -153,4 +155,6 @@ module.exports = async (on, config) => {
   });
 
   addMatchImageSnapshotPlugin(on, config);
+  const newConfig = await initCypressPlugin(on, config);
+  return newConfig;
 };

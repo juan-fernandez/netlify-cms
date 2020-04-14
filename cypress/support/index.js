@@ -16,6 +16,7 @@ import 'cypress-plugin-tab';
 import 'cypress-file-upload';
 import 'cypress-jest-adapter';
 import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
+import '@undefinedlabs/scope-agent/cypress/support';
 
 addMatchImageSnapshotCommand({
   failureThreshold: 0.01,
