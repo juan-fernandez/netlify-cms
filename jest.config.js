@@ -11,5 +11,7 @@ module.exports = {
   },
   testURL: 'http://localhost:8080',
   testRunner: '@undefinedlabs/scope-agent/jest/testRunner',
-  runner: '@undefinedlabs/scope-agent/jest/runner',
+  globalSetup: '@undefinedlabs/scope-agent/jest/globalSetup',
+  collectCoverage: true,
+  forceCoverageMatch: ['**/*.test.js'],
 };

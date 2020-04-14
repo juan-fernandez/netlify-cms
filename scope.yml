@@ -1,3 +1,5 @@
+code_path:
+  enabled: true
 instrumentation:
   enabled: true
   http:
@@ -5,3 +7,5 @@ instrumentation:
     headers:
       - ot-tracer-traceid
       - ot-tracer-spanid
+  db:
+    statement_values: true
